@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navList{
+  @apply bg-transparent hover:bg-green-400 transition-all duration-200 ease-in-out py-2 px-4 rounded-sm hover:drop-shadow-md hover:text-gray-50;
+}
+.navLink{
+  @apply capitalize text-base font-bold cursor-pointer;
+}
+.flexRow{
+  @apply flex items-center;
+}
