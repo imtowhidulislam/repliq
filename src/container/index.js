@@ -5,3 +5,4 @@ export {default as Account} from "../pages/Account";
 export {default as Cart} from "../pages/Cart";
 export {default as Dashboard} from "../pages/Dashboard";
 export {default as Footer} from "../layout/Footer";
+export {default as Demo} from "../components/Demo"; 

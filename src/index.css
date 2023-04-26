@@ -11,3 +11,27 @@
 .flexRow{
   @apply flex items-center;
 }
+
+/* ?? Footer Style Start */
+  .footerStyle{
+    @apply capitalize text-base font-bold text-left
+  }
+  .footerStyle > *:nth-child(1){
+    margin-bottom: .5rem;
+    color: #adafb1;
+  }
+/* ?? Footer Style End */
+
+/* !! Unique Btn Style Start */
+.btn_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.btn{
+  @apply capitalize text-sm font-bold px-8 py-2 rounded-full cursor-pointer bg-sky-400 text-gray-700 hover:bg-sky-600 hover:text-gray-200 transition-all duration-200 ease-in-out;
+}
+/* !! Unique Btn Style End */
+
