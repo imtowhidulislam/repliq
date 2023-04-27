@@ -35,3 +35,35 @@
 }
 /* !! Unique Btn Style End */
 
+/* *** Product Image Container Style Start */
+.imgContainer{
+  max-width: 13rem;
+}
+.card{
+  @apply border-2 drop-shadow-md z-10 bg-[#ffff] hover:scale-105 transition-transform ease-in-out duration-200 overflow-hidden text-left border-gray-300 rounded-md;
+}
+/* *** Product Image Container Style End */
+
+/* ** Form Style Start */
+.contact{
+  background-image: url("https://unsplash.it/1000/1000?image=551");
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+}
+  .form{
+    background-color: hsla(60, 2%, 62%, 0.2);
+    padding: .4rem;
+    border-radius: .2rem;
+  }
+  .lableWidth{
+    min-width: 20%;
+    text-align: right;
+  }
+  .registerForm > *:not(:last-child){
+    margin-bottom: 1rem;
+  }
+/* ** Form Style End */
+
+
+

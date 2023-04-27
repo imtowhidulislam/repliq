@@ -9,7 +9,6 @@ module.exports = {
         "collectionLayout" : "repeat(auto-fit, minmax(12rem, 1fr))",
         "homepageLayoutHero" : "repeat(auto-fit, minmax(18rem, 1fr))"
       }
-
     },
   },
   plugins: [],

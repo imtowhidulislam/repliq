@@ -18,7 +18,7 @@ function App() {
           <Route path='cart' element={<Cart/>}></Route>
         </Routes>
       <Footer />
-      <Demo />
+      {/* <Demo /> */}
       </ProductContextProvider>
     </div>
   );
