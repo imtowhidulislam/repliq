@@ -24,7 +24,7 @@ const Footer = () => {
                 </Link>
             </div>
         </div>
-        <div className='grid grid-cols-footerLayout gap-4'>
+        <div className='grid grid-cols-footerLayout gap-12'>
             <div className='footerStyle'>
                 <h2>Privacy Policy</h2>
                 <p>Terms & Condition</p>
