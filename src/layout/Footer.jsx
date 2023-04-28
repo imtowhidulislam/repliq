@@ -20,7 +20,7 @@ const Footer = () => {
         <div className='text-6xl flex items-center justify-center mb-10 text-gray-100'>
             <div>
                 <Link to="/" className="cursor-pointer">
-                    <h2 className='uppercase text-white text-2xl font-bold flex gap-2 items-center'><span className='text-white'><RiShoppingBagFill /></span>repliq</h2>
+                    <h2 className='uppercase text-white text-2xl font-bold flex gap-2 items-center'><span className='text-cyan-400 text-4xl'><RiShoppingBagFill /></span>repliq</h2>
                 </Link>
             </div>
         </div>
@@ -38,7 +38,7 @@ const Footer = () => {
                 <div className='w-full'>
                     <input className='w-full border border-gray-300 rounded-sm mb-4 py-2 px-4 bg-transparent' id='email' name="email" value={footerForm.email} onChange={handleChange} placeholder='Email' type="text" /></div>
                 <div className=' bg-cyan-300 rounded-sm drop-shadow-md py-2 px-5 w-full'>
-                    <button type='button' onClick={handleSubmit} className='cursor-pointer capitalize text-base'>subscribe</button>
+                    <button type='button' onClick={handleSubmit} className='w-full cursor-pointer capitalize text-base text-center'>subscribe</button>
                 </div>
                 <h2 className='mt-4 capitalize text-xs text-gray-100'>get regular updates on our product with our newsletter.</h2>
             </div>
