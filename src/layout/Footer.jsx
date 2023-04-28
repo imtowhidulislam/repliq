@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {FaFacebookSquare,FaInstagramSquare,FaTwitterSquare,FaLinkedin} from "react-icons/fa"
 import {RiShoppingBagFill} from "react-icons/ri";
 import { FaCopyright } from 'react-icons/fa'
@@ -6,13 +6,29 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     const [footerForm, setFooterForm] = useState({email:""});
-
+    const [newsletterUser, setNewsletterUser] = useState([]);
+ 
     const handleChange = (e) => {
         const {name,value} = e.target;
-        // setFooterForm(currVal => { ...currVal,[name]:value })
-        console.log(name, value);
+        setFooterForm({...footerForm,[name]:value});
     }
-    const handleSubmit = (e)=> {}
+    const handleSubmit = (e)=> {
+        e.preventDefault();
+        if(footerForm.email){
+            const id = new Date().getTime().toString();
+            const newUser = {...footerForm, id};
+            const updatedData = [...newsletterUser, newUser];
+            setNewsletterUser(updatedData);
+            
+            setFooterForm({email : ""});
+        }
+    }
+
+    // !! Storing Newsletter Data into the localStorage.
+    useEffect(() => {
+        localStorage.setItem('newsletteruser', JSON.stringify(newsletterUser));
+    },[newsletterUser])
+    console.log(newsletterUser);
     
   return (
     <div className='bg-blue-700 px-4 py-8'>
