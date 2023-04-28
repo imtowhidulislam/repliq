@@ -1,6 +1,6 @@
 import React, { useEffect , useState} from 'react'
 import Button from '../../Util/Button';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 const ProductOfList = ({product, setProduct, cart, setCart}) => {
     // const [cart,setCart] = useState([]);
@@ -43,6 +43,7 @@ const ProductOfList = ({product, setProduct, cart, setCart}) => {
                     </div>
                 )
             })
+            
         }
     </>
   )
