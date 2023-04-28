@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa';
 
-const ProductDetailsPage = ({productValue,uniqueItem, urlId,cartValue, setProductValue, setCartValue}) => {
+const ProductDetailsPage = ({product,uniqueItem, cart, setProduct, setCart}) => {
+
+    const getProduct = (id) => {
+        const fetchCartItem = product.find(item => item.id === id);
+        setCart(prevValue => [...prevValue, fetchCartItem]);
+    }
     
   return (
     
@@ -23,7 +28,7 @@ const ProductDetailsPage = ({productValue,uniqueItem, urlId,cartValue, setProduc
                         <h2 className='text-sm sm:text-base font-bold pb-4 text-green-400'>${price} USD</h2>
                         <h2 className='text-sm sm:text-base flex items-center justify-start font-bold pb-4 text-yellow-400'><span className='mr-2'><FaStar /></span> {rating.rate}<span className='pl-2 text-sm sm:text-base font-bold text-blue-600'>({rating.count})</span></h2>
                         <h2 className='text-sm sm:text-base font-bold pb-4'>{category}</h2>
-                        <div className='w-full'><button className='bg-blue-400 text-black py-2 px-8 rounded-lg drop-shadow-md cursor-pointer hover:bg-blue-700 hover:text-gray-50 transition-all duration-200 ease-in-out capitalize mt-6'>add to cart</button></div>
+                        <div className='w-full'><button onClick={() => getProduct(id)} className='bg-blue-400 text-black py-2 px-8 rounded-lg drop-shadow-md cursor-pointer hover:bg-blue-700 hover:text-gray-50 transition-all duration-200 ease-in-out capitalize mt-6'>add to cart</button></div>
                     </div>
                 </div>
                 )

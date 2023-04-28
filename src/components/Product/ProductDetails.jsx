@@ -7,8 +7,8 @@ const ProductDetails = () => {
     const params = useParams();
     const {product,cart} = useContext(ProductContext);
     const [productValue, setProductValue] = product;
+    const [cartValue, setCartValue] = cart;
     const [uniqueItem, setUniqueItem] = useState([]);
-
     const [pathName, setPathName] = useState(window.location.pathname);
     const [itemsId, setItemsId] = useState(1);
     
@@ -31,7 +31,7 @@ const ProductDetails = () => {
 
   return (
     <div className=''>
-        <ProductDetailsPage productValue={productValue} setProductValue={setProductValue} uniqueItem={uniqueItem} />
+        <ProductDetailsPage product={productValue} setProduct={setProductValue} cart={cartValue} setCart={setCartValue} uniqueItem={uniqueItem} />
     </div>
   )
 }
