@@ -28,7 +28,9 @@ const Register = () => {
   const toggleForm = () =>  {
     setToogleAction(!toggleAction);
   }
-  
+  useEffect(() => {
+    localStorage.setItem('user', JSON.stringify(person));
+  },[person])
 
   useEffect(() => {
     console.log(toggleAction);
