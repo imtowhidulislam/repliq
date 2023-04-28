@@ -1,10 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {FaFacebookSquare,FaInstagramSquare,FaTwitterSquare,FaLinkedin} from "react-icons/fa"
 import {RiShoppingBagFill} from "react-icons/ri";
 import { FaCopyright } from 'react-icons/fa'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const [footerForm, setFooterForm] = useState({email:""});
+
+    const handleChange = (e) => {
+        const {name,value} = e.target;
+        // setFooterForm(currVal => { ...currVal,[name]:value })
+        console.log(name, value);
+    }
+    const handleSubmit = (e)=> {}
+    
   return (
     <div className='bg-blue-700 px-4 py-8'>
         <div className='container'>
@@ -17,30 +26,38 @@ const Footer = () => {
         </div>
         <div className='grid grid-cols-footerLayout gap-4'>
             <div className='footerStyle'>
-                <h2>services</h2>
-                <p>branding</p>
-                <p>design</p>
-                <p>marketing</p>
-                <p>advertisement</p>
+                <h2>Privacy Policy</h2>
+                <p>Terms & Condition</p>
+                <p>contacts</p>
+                <p>support</p>
+                <p>feedback</p>
             </div>
             <div className='footerStyle'>
-                <h2>company</h2>
-                <p>about us</p>
-                <p>contact</p>
-                <p>jobs</p>
-                <p>press kit</p>
+                <h2>subscribe our newsletter and get 10% off!!</h2>
+                <form action="" onSubmit={handleSubmit}></form>
+                <div className='w-full'>
+                    <input className='w-full border border-gray-300 rounded-sm mb-4 py-2 px-4 bg-transparent' id='email' name="email" value={footerForm.email} onChange={handleChange} placeholder='Email' type="text" /></div>
+                <div className=' bg-cyan-300 rounded-sm drop-shadow-md py-2 px-5 w-full'>
+                    <button type='button' onClick={handleSubmit} className='cursor-pointer capitalize text-base'>subscribe</button>
+                </div>
+                <h2 className='mt-4 capitalize text-xs text-gray-100'>get regular updates on our product with our newsletter.</h2>
             </div>
             <div className='footerStyle'>
-                <h2>address</h2>
-                <p>house#2/1, road#2,</p>
-                <p>block#c, section#2,</p>
-                <p>mirpur,dhaka-1216</p>
+                <h2>Navigate</h2>
+                <li>
+                    
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/product">Product</Link>
+                </li>
+                <li>
+                    <Link to="/dashboard">Dashboard</Link>
+                </li>
                 <p>
-                    <span>email : </span>weerodigital@gmail.com 
+                    <span>email : </span>repliq@gmail.com 
                 </p>
-                <p>
-                    <span>phone : </span>01634546443
-                </p>
+                
                 <p>Social handls</p>
                 <div className='flex text-2xl text-gray-300 gap-2 mt-2'>
                     <FaFacebookSquare />
@@ -53,7 +70,7 @@ const Footer = () => {
         <div className='mt-12 capitalize text-gray-300 flex items-center justify-center gap-1'>
                 <FaCopyright />
             <p className=''>
-                copyright <span>2023. </span>all rights reserve to weero Digital</p>
+                copyright <span>2023. </span>all rights reserve to repliqShop</p>
         </div>
         </div>
     </div>
