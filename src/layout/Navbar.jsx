@@ -33,7 +33,11 @@ const Navbar = () => {
       window.removeEventListener("resize", calcSize);
     };
   }, []);
+  useEffect(() =>{
+    setToggleNav(true);
+  },[])
 
+  console.log(toggleNav);
     // ? Navbar Toggle Functionality...
     const handleToggle = () => {
         setToggleNav(!toggleNav);
