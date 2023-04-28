@@ -7,6 +7,8 @@ export const ProductContext = createContext();
 // ?? Setting up the Provider to serve data.
 export const ProductContextProvider = ({children}) => {
     const [product, setProduct] = useState([]);
+    const [cart, setCart] = useState([]);
+
     const getProduct = async (url) => {
         const res = await fetch(url);
         const resData = await res.json();
@@ -19,7 +21,7 @@ export const ProductContextProvider = ({children}) => {
         getProduct(fakeApi);
     },[])
     return (
-        <ProductContext.Provider value={[product, setProduct]}>
+        <ProductContext.Provider value={{product:[product, setProduct], cart:[cart, setCart]}}>
             {children}
         </ProductContext.Provider>
     )

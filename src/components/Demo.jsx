@@ -1,13 +1,46 @@
 import React from 'react'
 import { ProductContext } from '../context/productContext'
 import { useContext } from 'react'
+import { Link } from 'react-router-dom';
+import {BsCartPlus} from "react-icons/bs";
+import {VscAccount} from "react-icons/vsc";
+import SearchButton from './SearchButton';
 
 const Demo = () => {
-    const [product, setProduct] = useContext(ProductContext);
-console.log(product);
+    // const [product, setProduct] = useContext(ProductContext);
+// console.log(product);
   return (
-    <div>
-        <div className='grid grid-cols-productLayout gap-4 place-content-center'>
+    <div className='py-20 fixed top-0 left-0 h-full px-32 backdrop-blur-md backdrop-filter bg-[#1e1e1c89] '>
+        <div className=''>
+            <div>
+                <li>
+                    <SearchButton />
+                </li>
+            </div>
+            <div className='gap-2'>
+                <li className='navList'>
+                    <Link className='navLink' to="/">Home</Link>
+                </li>
+                <li className='navList'>
+                    <Link className='navLink' to="/product">Product</Link>
+                </li>
+                <li className='navList'>
+                    <Link className='navLink' to="/dashboard">Dashboard</Link>
+                </li>
+            </div>
+            <div className='gap-4 m-auto'>
+                <li className='flex items-center justify-center gap-2 py-2'>
+                    <span><VscAccount/></span>
+                    <Link to="/account"> Account</Link>
+                </li>
+                <li className='flex items-center justify-center gap-2 py-2'>
+                    <span><BsCartPlus/></span>
+                    <Link to="/cart"> Cart</Link>
+                </li>
+            </div>
+        </div> 
+        
+        {/* <div className='grid grid-cols-productLayout gap-4 place-content-center'>
             {
                 product.map(pdt => {
                     const {id, image} = pdt;
@@ -26,7 +59,7 @@ console.log(product);
                     )
                 })
             }
-        </div>
+        </div> */}
     </div>
   )
 }

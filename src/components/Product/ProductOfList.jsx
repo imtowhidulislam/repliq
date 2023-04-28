@@ -1,17 +1,14 @@
 import React, { useEffect , useState} from 'react'
 import Button from '../../Util/Button';
+import { Link } from 'react-router-dom';
 
-const ProductOfList = ({product, setProduct}) => {
-    const [cart,setCart] = useState([]);
+const ProductOfList = ({product, setProduct, cart, setCart}) => {
+    // const [cart,setCart] = useState([]);
     const getProduct = (id) => {
-        console.log(id);
         const fetchCartItem = product.find(item => item.id === id);
-        setCart(fetchCartItem);
+        setCart(prevItem => [...prevItem,fetchCartItem]);
     }
-    useEffect(() => {
-        console.log(cart);
-    },[cart])
-    console.log(cart);
+    
     return (
     <>
         {
@@ -20,6 +17,7 @@ const ProductOfList = ({product, setProduct}) => {
 
                 return (
                     <div key={id} className='card'>
+                        <Link to={`/product/${id}`}>
                         <div className="m-auto w-48 max-h-44 mb-4 p-4">
                             <img className="block h-44 object-cover w-full" src={img} alt="" />
                         </div>
@@ -40,6 +38,8 @@ const ProductOfList = ({product, setProduct}) => {
 
 <button type='button' onClick={() => getProduct(id)} className='capitalize font-bold text-sm text-gray-100 bg-blue-600 cursor-pointer py-2 px-4 rounded-md hover:drop-shadow-md transition-all duration-200 ease-in-out hover:text-slate-50 hover:bg-blue-700'>add to cart</button>
                         </div>
+                        </Link>
+
                     </div>
                 )
             })

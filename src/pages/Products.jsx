@@ -4,7 +4,10 @@ import ProductCategory from '../components/Product/productCategory';
 import ProductOfList from '../components/Product/ProductOfList';
 
 const Products = () => {
-    const [product, setProduct] = useContext(ProductContext);
+
+    const {product, cart} = useContext(ProductContext);
+    const [cartValue, setCartValue] = cart;
+    const [productValue, setProductValue] = product;
     const [button, setButton] = useState([]);
     const [filterProduct , setFilterProduct] = useState("All");
 
@@ -14,14 +17,15 @@ const Products = () => {
         }
         
         const fetchCat = () => {
-            let unique = product.map(but => but.category);
+            let unique = productValue.map(but => but.category);
             unique = [...new Set(unique)]
             setButton(unique);
         }
         useEffect(() => {
             fetchCat();
         },[])
-        
+        console.log(cartValue);
+        console.log(productValue);
   return (
     <div className='container py-24 px-8 md:px-0'>
         <div className='btn_container'>
@@ -41,7 +45,8 @@ const Products = () => {
         </div>
         <div className='grid grid-cols-productLayout gap-4 mt-10'>
             {   
-                filterProduct === "All" ? <ProductOfList filterProduct={filterProduct} product={product} setProduct={setProduct} /> : <ProductCategory filterProduct={filterProduct} product={product} setProduct={setProduct} />
+                filterProduct === "All" ? <ProductOfList filterProduct={filterProduct} cart={cartValue} setCart={setCartValue} product={productValue} setProduct={setProductValue} /> : <ProductCategory filterProduct={filterProduct} 
+cart={cartValue} setCart={setCartValue} product={productValue} setProduct={setProductValue} />
             }
         </div>
     </div>

@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react'
 // import Button from "../../Util/Button"
 
-const ProductCategory = ({product,setProduct,filterProduct}) => {
-    const [cart, setCart] = useState([]);
+const ProductCategory = ({product,setProduct,filterProduct, cart, setCart}) => {
     const [filterProductData, setFilterProductData] = useState([]);
 
     const filterCategory = () => {
@@ -16,11 +15,9 @@ const ProductCategory = ({product,setProduct,filterProduct}) => {
     },[filterProduct])
 
     const getProduct = (id) => {
-        console.log(id);
         const fetchCartItem = product.find(item => item.id === id);
-        setCart(fetchCartItem);
+        setCart(prevValue => [...prevValue, fetchCartItem]);
     }
-        console.log(cart);
     
   return (
     <>

@@ -65,5 +65,118 @@
   }
 /* ** Form Style End */
 
+/* ?? NavBar Style Start */
+.mobileNav{
+  inset: -100% 0% 100% 0%;
+  transition: inset 1s ease-in-out;
+}
+.mobileNav-active{
+  inset: 56px 0% 0% 0%;
+}
+/* ?? NavBar Style End */
 
+/* !! Dashboard Style Start */
+  .grid-layout{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    /* place-items: center; */
+    /* gap: 1rem; */
+    min-height: 40rem;
+  }
+  .grid-layout > *:first-child{
+    background-color: #e4e2e2;
+    grid-row: 1;
+    grid-column: 1 / 5;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+  }
+  .grid-layout > *:last-child{
+    background-color: #ccc9c9;
+    grid-row: 1;
+    grid-column: 5 / 13;
+    padding-block: 2rem;
+    padding-inline: 1rem;
+  }
 
+  @media (max-width: 600px) {
+    .grid-layout > *:first-child{
+      grid-column: 1 /13;
+    }
+    .grid-layout > *:last-child{
+      grid-row: 2;
+      grid-column:  1 /13;
+    }
+  }
+/* !! Dashboard Style End */
+/* ??? Cart style Start */
+.cartHeight{
+  min-height: 30rem;
+}
+.countCart{
+  position: relative;
+}
+.numberOfItem{
+  position: absolute;
+  top: -15px;
+  left: 40px;
+  font-weight: bold;
+  font-size: .6rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #f46363;
+  
+}
+/* ??? Cart style End */
+
+/* *** Home Page Style Start */
+.topCard{
+  height: 100%;
+  max-height: 500px;
+  position: relative;
+  cursor: pointer;
+}
+.deleteBtn{
+  position: absolute;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: white;
+  top: 10%;
+  right: 10%;
+}
+.topCard::after{
+  position: fixed;
+  display: none;
+  content: "this is just a demo text";
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: .5rem;
+  color: white;
+  background-color: #0a4bbaa3;
+  padding: 2rem;
+  font-size: 1rem;
+
+}
+.topImgCon{
+  width: 100%;
+  overflow: hidden;
+  height: 60%;
+  display: grid;
+  place-items: center;
+}
+.topImg{
+  width: 250px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+/* *** Home Page Style End */
+
+/* !! Product Details Style Start */
+.singleItmeImg{
+  max-width: 400px;
+}
+/* !! Product Details Style End */
