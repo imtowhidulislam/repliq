@@ -1,7 +1,8 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import {RiShoppingBagFill } from "react-icons/ri";
 import { ProductContext } from '../context/productContext';
 import { FaTrash } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const {product, cart} = useContext(ProductContext);
@@ -13,6 +14,7 @@ const Dashboard = () => {
       current.filter((item) => item.id !== id)
     );
   };
+
   
   return (
     <div>
@@ -22,10 +24,14 @@ const Dashboard = () => {
                     <h2 className='uppercase text-blue-600 text-2xl font-bold flex gap-2 items-center'><span className='text-green-600'><RiShoppingBagFill /></span>repliq</h2>
           </div>
           <div className='w-full grid place-items-start gap-3'>
-            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>Customers</button>
-            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>Add Customers</button>
-            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>Products</button>
-            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>add Products</button>
+            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>products
+            </button>
+            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>customers
+ </button>
+            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>add product
+ </button>
+            <button className='w-full bg-green-300 text-gray-900 font-medium font-serif py-2 px-8 rounded-full cursor-pointer capitalize hover:bg-slate-800 hover:text-green-300 border-2 border-transparent hover:border-green-600'>add customer
+ </button>
           </div>
         </div>
         <div>
