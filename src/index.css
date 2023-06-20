@@ -132,7 +132,7 @@
 /* *** Home Page Style Start */
 .topCard{
   height: 100%;
-  max-height: 500px;
+  max-height: 450px;
   position: relative;
   cursor: pointer;
 }
