@@ -61,11 +61,6 @@ const Navbar = () => {
                 <li className='navList'>
                     <Link className='navLink' to="/dashboard">Dashboard</Link>
                 </li>
-            </div>
-            <div className='flexRow gap-4'>
-                <li>
-                    <SearchButton />
-                </li>
                 <li className='flex items-center gap-2'>
                     <span><VscAccount/>
                     </span>
@@ -78,6 +73,12 @@ const Navbar = () => {
                     </span>
                     <Link to="/cart"> Cart</Link>
                 </li>
+            </div>
+            <div className='flexRow gap-4'>
+                <li>
+                    <SearchButton />
+                </li>
+               
             </div>
         </nav>
             ) : (

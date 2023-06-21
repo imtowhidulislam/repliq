@@ -26,8 +26,8 @@ const ProductOfList = ({product, setProduct, cart, setCart}) => {
                                     <h2>Name : {title}</h2>
                                 </div>
                                 <div className='flex items-center justify-between gap-4 py-2'>
-                                    <h2>Price : <span className='font-bold text-yellow-400'>{price}$</span></h2>
-                                    <p>Rating : <span className='font-bold text-yellow-400'>{rating.rate}</span></p>
+                                    <h2>Price : <span className='font-bold text-blue-800'>{price}$</span></h2>
+                                    <p>Rating : <span className='font-bold text-blue-600'>{rating.rate}</span></p>
                                 </div>
                                     <h2>Category : {cat}</h2>
                                     {/* <p>Detail : {desc}$</p> */}
